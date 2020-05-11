@@ -23,6 +23,7 @@ namespace ContactsApi.Controllers
             return ContactsRepo.GetAll();
         }
 
+        //Name="GetContacts" in the following verb is used to redirect to controller/GetContacts path and fetch data as per the passed id
         [HttpGet("{id}", Name = "GetContacts")]
         public IActionResult GetById(string id)
         {

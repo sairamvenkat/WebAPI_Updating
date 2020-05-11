@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\schinta8\\Desktop\\ContactsAPI - Basic\\ContactsAPI.csproj": {}
+    "C:\\Users\\csair\\Desktop\\WebAPI_Updating-master\\ContactsAPI - Basic\\ContactsAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\schinta8\\Desktop\\ContactsAPI - Basic\\ContactsAPI.csproj": {
+    "C:\\Users\\csair\\Desktop\\WebAPI_Updating-master\\ContactsAPI - Basic\\ContactsAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\schinta8\\Desktop\\ContactsAPI - Basic\\ContactsAPI.csproj",
+        "projectUniqueName": "C:\\Users\\csair\\Desktop\\WebAPI_Updating-master\\ContactsAPI - Basic\\ContactsAPI.csproj",
         "projectName": "ContactsAPI",
-        "projectPath": "C:\\Users\\schinta8\\Desktop\\ContactsAPI - Basic\\ContactsAPI.csproj",
-        "packagesPath": "C:\\Users\\schinta8\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\schinta8\\Desktop\\ContactsAPI - Basic\\obj\\",
+        "projectPath": "C:\\Users\\csair\\Desktop\\WebAPI_Updating-master\\ContactsAPI - Basic\\ContactsAPI.csproj",
+        "packagesPath": "C:\\Users\\csair\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\csair\\Desktop\\WebAPI_Updating-master\\ContactsAPI - Basic\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\schinta8\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\csair\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

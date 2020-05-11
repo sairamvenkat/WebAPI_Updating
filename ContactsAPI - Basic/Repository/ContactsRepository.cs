@@ -26,7 +26,7 @@ namespace ContactsApi.Repository
             }
         }
 
-        public SqlDataReader Find(string key)
+        public string Find(string key)
         {
             SqlConnectionStringBuilder conn = Connections.connectToDB();
             SqlDataReader reader;
@@ -37,12 +37,20 @@ namespace ContactsApi.Repository
                 command.Parameters.AddWithValue("@key", key);
                 connection.Open();
                 reader = command.ExecuteReader();
-                //   SqlCommand cmd = new SqlCommand(query, connection);
-                //   cmd.ExecuteNonQuery();
-               
+                while (reader.Read())
+                {
+                    if (reader["FirstName"].ToString() == key)
+                    {
+                        return key;
+                    }
+                    else
+                    {
+                        key = string.Empty;
+                    }
+                }
             }
-            return reader;
-           
+            return key;
+
             //return ContactsList
             //    .Where(e => e.FirstName.Equals(key))
             //    .SingleOrDefault();
@@ -53,28 +61,55 @@ namespace ContactsApi.Repository
             return ContactsList;
         }
 
-        public void Remove(string Id)
+        public void Remove(string key)
         {
-            var itemToRemove = ContactsList.SingleOrDefault(r => r.FirstName == Id);
-            if (itemToRemove != null)
-                ContactsList.Remove(itemToRemove);
+
+            SqlConnectionStringBuilder conn = Connections.connectToDB();
+            SqlDataReader reader;
+            using (var connection = new SqlConnection(conn.ConnectionString))
+            {
+                connection.Open();
+                string del = "DELETE FROM dbo.Contacts WHERE FirstName=@key;";
+                SqlCommand command = new SqlCommand(del, connection);
+                command.Parameters.AddWithValue("@key", key);
+                command.ExecuteReader();
+                connection.Close();
+
+            }
+
+            //var itemToRemove = ContactsList.SingleOrDefault(r => r.FirstName == Id);
+            //if (itemToRemove != null)
+            //    ContactsList.Remove(itemToRemove);
         }
 
         public void Update(Contacts item)
         {
-            var itemToUpdate = ContactsList.SingleOrDefault(r => r.MobilePhone == item.MobilePhone);
-            if (itemToUpdate != null)
+
+            SqlConnectionStringBuilder conn = Connections.connectToDB();
+            using (var connection = new SqlConnection(conn.ConnectionString))
             {
-                itemToUpdate.FirstName = item.FirstName;
-                itemToUpdate.LastName = item.LastName;
-                itemToUpdate.IsFamilyMember = item.IsFamilyMember;
-                itemToUpdate.Company = item.Company;
-                itemToUpdate.JobTitle = item.JobTitle;
-                itemToUpdate.Email = item.Email;
-                itemToUpdate.MobilePhone = item.MobilePhone;
-                itemToUpdate.DateOfBirth = item.DateOfBirth;
-                itemToUpdate.AnniversaryDate = item.AnniversaryDate;
+                string key = item.FirstName;
+                connection.Open();
+                string update = "UPDATE dbo.Contacts  SET firstname =@key WHERE firstname='sai';";
+                SqlCommand command = new SqlCommand(update, connection);
+                command.Parameters.AddWithValue("@key", key);
+                command.ExecuteReader();
+                connection.Close();
+
             }
+            //var itemToUpdate = ContactsList.SingleOrDefault(r => r.FirstName == item.FirstName);
+            //if (itemToUpdate != null)
+            //{
+            //    itemToUpdate.FirstName = item.FirstName;
+            //    itemToUpdate.LastName = item.LastName;
+            //    itemToUpdate.IsFamilyMember = item.IsFamilyMember;
+            //    itemToUpdate.Company = item.Company;
+            //    itemToUpdate.JobTitle = item.JobTitle;
+            //    itemToUpdate.Email = item.Email;
+            //    itemToUpdate.MobilePhone = item.MobilePhone;
+            //    itemToUpdate.DateOfBirth = item.DateOfBirth;
+            //    itemToUpdate.AnniversaryDate = item.AnniversaryDate;
+            //}
         }
     }
 }
