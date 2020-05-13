@@ -1,0 +1,23 @@
+Post Request Sample Data
+https://onlineshoppingcontactsapi.azurewebsites.net/api/Contacts
+{
+    "firstName": "Sarwani",
+    "lastName": "Pillalamarri",
+    "isFamilyMember": true,
+    "Gender": "Female",
+    "email": "sai@gmail.com",
+    "mobilePhone": "12345",
+    "dateOfBirth": "2012-02-07 21:42:00"
+}
+
+Post Request Sample Data
+https://onlineshoppingcontactsapi.azurewebsites.net/api/ContactsRole
+{
+    "ContactId": "1",
+    "ContactRole": "Administrator"
+}
+
+
+Agenda: Post Request of Contacts create record in contacts table in Azure AQL.Upon receiving the identity column the ContactsRole API is called and creates an entry in ContactRole table with data passed.
+//Currently Only Post Requests are working in ContactRoles and Contacts API.
+Source Link : https://www.mithunvp.com/create-aspnet-mvc-6-web-api-visual-studio-2017/
