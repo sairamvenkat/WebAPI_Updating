@@ -18,6 +18,6 @@ https://onlineshoppingcontactsapi.azurewebsites.net/api/ContactsRole
 }
 
 
-Agenda: Post Request of Contacts create record in contacts table in Azure AQL.Upon receiving the identity column the ContactsRole API is called and creates an entry in ContactRole table with data passed.
+Agenda: Post Request of Contacts create record in contacts table in Azure SQL.Upon receiving the identity column the ContactsRole API is called and creates an entry in ContactRole table with data passed.
 //Currently Only Post Requests are working in ContactRoles and Contacts API.
 Source Link : https://www.mithunvp.com/create-aspnet-mvc-6-web-api-visual-studio-2017/
