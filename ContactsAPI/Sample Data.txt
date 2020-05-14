@@ -1,14 +1,16 @@
 Post Request Sample Data
 https://onlineshoppingcontactsapi.azurewebsites.net/api/Contacts
 {
-    "firstName": "Sarwani",
-    "lastName": "Pillalamarri",
+    "firstName": "Chintalapati",
+    "lastName": "SaiRam",
     "isFamilyMember": true,
-    "Gender": "Female",
-    "email": "sai@gmail.com",
-    "mobilePhone": "12345",
-    "dateOfBirth": "2012-02-07 21:42:00"
+    "Gender": "Male",
+    "email": "c.sairamvenkat@gmail.com",
+    "mobilePhone": "7416037183",
+    "dateOfBirth": "1993-06-13 21:42:00",
+    "Role": "Administrator"
 }
+
 
 Post Request Sample Data
 https://onlineshoppingcontactsapi.azurewebsites.net/api/ContactsRole

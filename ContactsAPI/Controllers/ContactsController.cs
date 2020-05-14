@@ -54,7 +54,7 @@ namespace ContactsApi.Controllers
             {
                 ContactsRole cr = new ContactsRole();
                 cr.CONTACTID = int.Parse(contactId);
-                cr.CONTACTROLE = "Administrator";
+                cr.CONTACTROLE = item.ROLE;
                 string contactroleURI =  "https://onlineshoppingcontactsapi.azurewebsites.net/api/ContactsRole";//"http://localhost:5000/api/ContactsRole" ;
                 var response1 = string.Empty;
                 HttpContent c = new StringContent(JsonConvert.SerializeObject(cr), Encoding.UTF8, "application/json");

@@ -11,5 +11,6 @@ namespace ContactsApi.Models
         public string MOBILEPHONE { get; set; }
         public DateTime DATEOFBIRTH { get; set; }
         public string CONTACTID { get; }
+        public string ROLE { get;set; }
     }
 }
